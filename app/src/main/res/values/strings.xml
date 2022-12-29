@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WebApiData</string>
+    <string name="Type">Type</string>
+    <string name="Rate">Rate</string>
+    <string name="Colon">:</string>
+    <string name="LastUpdate">last update</string>
 </resources>
