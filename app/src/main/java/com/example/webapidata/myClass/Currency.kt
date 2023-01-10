@@ -1,4 +1,4 @@
-package com.example.webapidata
+package com.example.webapidata.myClass
 
 class Currency(
     var AUD: Double,
