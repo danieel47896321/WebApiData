@@ -30,14 +30,14 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         mainController.setView()
     }
-    fun setLastView(timeLastUpdateUtc: String) {
-        textViewLastUpdate.text = timeLastUpdateUtc
+    fun mainWhenCase(id: String){
+        when(id){
+            "setLastView" -> { setLastView(mainController.getLastUpdate()) }
+            "setRecyclerView" -> { setProgressBar(mainController.getProgressBarView()) }
+            "setProgressBar" -> { setRecyclerView(mainController.getRecyclerView()) }
+        }
     }
-    fun setRecyclerView(exchangeAdapter: ExchangeAdapter, gridLayoutManager: GridLayoutManager) {
-        recyclerView.layoutManager = gridLayoutManager
-        recyclerView.adapter = exchangeAdapter
-    }
-    fun setProgressBar(view: Int) {
-        progressBar.visibility = view
-    }
+    private fun setLastView(timeLastUpdateUtc: String) { textViewLastUpdate.text = timeLastUpdateUtc }
+    private fun setRecyclerView(exchangeAdapter: ExchangeAdapter) { recyclerView.adapter = exchangeAdapter }
+    private fun setProgressBar(view: Int) { progressBar.visibility = view }
 }
