@@ -1,7 +1,7 @@
 package com.example.webapidata.controller
 
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.lifecycle.ViewModelProvider
 import com.example.webapidata.adapter.ExchangeAdapter
 import com.example.webapidata.MainActivity
 import com.example.webapidata.myClass.MyExchange
@@ -12,8 +12,11 @@ import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
-class MainController(var mainModel: MainModel, var view: MainActivity) {
-    fun setView() { fetchData().start() }
+class MainController(var view: MainActivity) {
+    private var mainModel: MainModel = ViewModelProvider(view)[MainModel::class.java]
+    fun setView() {
+        fetchData().start()
+    }
     private fun fetchData(): Thread{
         return Thread {
             val url = URL(mainModel.url)
