@@ -4,12 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.webapidata.adapter.ExchangeAdapter
 import com.example.webapidata.controller.MainController
-import com.example.webapidata.model.MainModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var textViewLastUpdate: TextView
